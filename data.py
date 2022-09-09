@@ -301,3 +301,10 @@ data = [
         'country': 'United States'
     }
 ]
+# def find(lst, key, value):
+#     for i, dic in enumerate(lst):
+#         if dic[key] == value:
+#             return dic[i]
+#     return -1
+# data.remove(find(data,'follower_count',47))
+# print()

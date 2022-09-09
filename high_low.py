@@ -11,13 +11,28 @@ def high_low(first,second,user_choise):
         return score+1
     else:
         return 0
-first = data[random.randint(0,50)]['follower_count']
-second = data[random.randint(0,50)]['follower_count']
+
+
+# Remove an element from a list by its dictionary value:
+
+
+# def find(lst, key, value):
+#     for i, dic in enumerate(lst):
+#         if dic[key] == value:
+#             return lst[i]
+#     return -1
+
+same = False
+while not same:
+    first = data[random.randint(0,len(data)-1)]['follower_count']
+    second = data[random.randint(0,len(data)-1)]['follower_count']
+    if first == second:
+        same = True
 
 score = 0
 game_end = False
 while not game_end:
-    second = data[random.randint(0,50)]['follower_count']
+    second = data[random.randint(0,len(data)-1)]['follower_count']
 
     first_person_name = [d['name'] for d in data if d['follower_count'] == first]
     first_person_description = [d['description'] for d in data if d['follower_count'] == first]
@@ -37,11 +52,10 @@ while not game_end:
         user_choise = second
     if high_low(first, second, user_choise) == 1:
         first = second
-        second = data[random.randint(0,50)]['follower_count']
+        second = data[random.randint(0,len(data)-1)]['follower_count']
         score += 1
     else:
         print(f'You were wrong this time. Your score is {score}')
         game_end = True
-
 
 
