@@ -1,6 +1,11 @@
+from turtle import clear
 from data import data
 import random
+import os
 
+
+def clear_console():
+    os.system('clear')
 
 
 def high_low(first,second,user_choise):
@@ -46,6 +51,7 @@ while not game_end:
     print("VS")
     print(f"With B: {second_person_name}, a {second_person_description}, from {second_person_country}.")
     user_choise = input('Which has more followers? A or B: ')
+    clear_console()
     if user_choise == 'A':
         user_choise = first
     else:
